@@ -21,21 +21,24 @@ if __name__ == '__main__':
             break
 
         elif check_operation == '1':
-            put_amount = int(input('Введите сумму: '))
-            client.put_money(put_amount)
+
+            try:
+                put_amount = int(input('Введите сумму: '))
+                client.put_money(put_amount)
+            except Exception as ValueError:
+                print('Non-numeric input detected.')
+
+
             print('У Вас на счету: ', client.info()[1])
         elif check_operation == '2':
-            pull_amount = int(input('Введите сумму: '))
-            client.withdraw_money(pull_amount)
+
+            try:
+                pull_amount = int(input('Введите сумму: '))
+                client.withdraw_money(pull_amount)
+            except Exception as ValueError:
+                print('Non-numeric input detected.')
+
+
             print('У Вас на счету: ', client.info()[1])
         else:
             print('Неверный ввод номера операции')
-
-
-
-
-
-
-
-            
-
