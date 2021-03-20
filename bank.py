@@ -24,6 +24,9 @@ class Bank:
             return amount
         except Exception as ValueError:
             print('Non-numeric input detected.')
+            amount = 0
+            return amount
+
 
     def __del__(self):
         print('Вы отказались от открытия счета,\nлибо закрыли существующий, до свидание')
