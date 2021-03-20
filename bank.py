@@ -18,5 +18,12 @@ class Bank:
         else:
             self.__cash -= amount
 
+    def client_input(self):
+        try:
+            amount = int(input('Введите сумму: '))
+            return amount
+        except Exception as ValueError:
+            print('Non-numeric input detected.')
+
     def __del__(self):
         print('Вы отказались от открытия счета,\nлибо закрыли существующий, до свидание')

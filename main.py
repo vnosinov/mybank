@@ -22,22 +22,23 @@ if __name__ == '__main__':
 
         elif check_operation == '1':
 
-            try:
-                put_amount = int(input('Введите сумму: '))
-                client.put_money(put_amount)
-            except Exception as ValueError:
-                print('Non-numeric input detected.')
-
+            client.put_money(client.client_input())
+            # try:
+            #     put_amount = int(input('Введите сумму: '))
+            #
+            # except Exception as ValueError:
+            #     print('Non-numeric input detected.')
 
             print('У Вас на счету: ', client.info()[1])
         elif check_operation == '2':
 
-            try:
-                pull_amount = int(input('Введите сумму: '))
-                client.withdraw_money(pull_amount)
-            except Exception as ValueError:
-                print('Non-numeric input detected.')
+            client.withdraw_money(client.client_input())
 
+            # try:
+            #     pull_amount = int(input('Введите сумму: '))
+            #     client.withdraw_money(pull_amount)
+            # except Exception as ValueError:
+            #     print('Non-numeric input detected.')
 
             print('У Вас на счету: ', client.info()[1])
         else:
